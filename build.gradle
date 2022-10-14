@@ -1,0 +1,36 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.4'
+	id 'io.spring.dependency-management' version '1.0.14.RELEASE'
+	id 'java'
+	id 'groovy'
+}
+
+group = 'bastianlobe'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	//Lombok
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	//Groovy
+	implementation 'org.codehaus.groovy:groovy:3.0.13'
+
+	//Spock
+	testImplementation group: 'org.spockframework', name: 'spock-core', version: '2.3-groovy-3.0'
+	testImplementation group: 'org.spockframework', name: 'spock-spring', version: '2.3-groovy-3.0'
+	
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
