@@ -21,6 +21,6 @@ jobs:
         with:
           push: true
           tags: |
-            bastianlo/moneymgr:${{ format('{0}{1}', github.ref == 'refs/heads/main' ? 'latest' : '' }}
+            bastianlo/moneymgr:${{ format('{0}{1}', github.ref == 'refs/heads/main' ? 'latest' : '', '') }}
             bastianlo/moneymgr:$(date +%s)
             bastianlo/moneymgr:${GITHUB_REF##*/}
