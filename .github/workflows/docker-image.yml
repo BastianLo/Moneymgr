@@ -25,7 +25,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: |
-            bastianlo/moneymgr:${{ steps.set_tags.outputs.tags }}
-            bastianlo/moneymgr:$(date +%s)
-            bastianlo/moneymgr:${{ GITHUB_REF##*/t }}
+          tags: bastianlo/moneymgr:${{ env.GITHUB_REF_NAME }}${{ ( env.BRANCH == 'main' && ',bastianlo/moneymgr:latest') || '' }}
