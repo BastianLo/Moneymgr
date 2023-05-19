@@ -28,4 +28,4 @@ jobs:
           tags: |
             bastianlo/moneymgr:${{ steps.set_tags.outputs.tags }}
             bastianlo/moneymgr:$(date +%s)
-            bastianlo/moneymgr:${{ github.ref.split('/').last }}
+            bastianlo/moneymgr:${{ GITHUB_REF##*/t }}
