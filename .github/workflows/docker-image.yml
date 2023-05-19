@@ -24,7 +24,7 @@ jobs:
         run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/moneymgr:$(date +%s)
       
       - name: Push Docker image
-        run: docker push ${{secrets.DOCKER_USERNAME}}/moneymgr
+        run: docker push ${{secrets.DOCKER_USERNAME}}/moneymgr:latest
       
       #- name: Build and push
       #  uses: docker/build-push-action@v4
