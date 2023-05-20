@@ -11,7 +11,7 @@ public class MoneymgrApplication {
 
 	@RequestMapping("/")
 	public String home() {
-		return "Hello World!";
+		return "Hello World! ";
 	}
 
 	public static void main(String[] args) {
